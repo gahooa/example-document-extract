@@ -1,26 +1,32 @@
-# template-python-docker
-A template repository for getting a project up and running with docker and python
+## To configure (ubuntu 22.04)
 
-## Setup:
+Clone the git repo...
 
-1. Create a new repository using this as the template
-2. Clone your new repository
+Add `LOCAL.env` to the directory with these values:
 
-`Dockerfile`: Contains build instructions... this is where you put pip packages you want installed
-`Dockerfile.build`: a script for building and tagging the image
-`Dockerfile.run`: an easy way to run 
+    OPENAI_API_KEY=
+    AWS_ACCESS_KEY_ID=
+    AWS_SECRET_ACCESS_KEY=
+    AWS_DEFAULT_REGION=
 
-Adjust `pip install` line in `Dockerfile` and then run `./build`
+The OpenAI key comes from their site
 
-## Running:
+The AWS info comes from creating an IAM user with the `AmazonTextractFullAccess` canned policy.
 
-The code is held in `main.py` though this can be adjusted in `Dockerfile`.  To run the project:
 
-`./run`
+## To build it
 
-To get an interactive python shell
+`sudo apt install gnome-screenshot`
+`./build`
 
-`./run python`
+## To run it
 
-Any args you pass to `Dockerfile.run` will be forwarded to the `docker run` command.
+`./run-with-cap`
+
+## Not using ubuntu?
+
+Create a file `input.png` and then call `./run`
+
+
+
 

@@ -4,6 +4,6 @@ cd $(dirname $0)
 
 TAG=$(basename $PWD)
 
-docker run --network host --user $(id -u):$(id -g) --rm -it -v $PWD:/app $TAG "$@"
+docker run -v /usr/bin/gnome-screenshot:/usr/bin/gnome-screenshot --env-file LOCAL.env --network host --user $(id -u):$(id -g) --rm -it -v $PWD:/app $TAG "$@"
 
 

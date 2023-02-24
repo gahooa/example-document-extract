@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+rm -f input.png
+
+gnome-screenshot --area -f input.png 
+
+if [ -f input.png ]; then
+    ./run
+fi
+
